@@ -45,7 +45,7 @@ En tus apps: El nombre del usuario, la puntuación, si completó una tarea.
 
 Si la IA se equivoca: Puede usar la variable antes de guardarle un valor, o escribir el nombre mal.
 
-🧪 Concepto 2: Funciones (recetas)
+##  🧪 Concepto 2: Funciones (recetas)
 Una función es un conjunto de pasos que podés ejecutar cuando querés.
 
 ```text
@@ -77,7 +77,7 @@ En tus apps: "Al hacer clic en el botón Guardar, tomar lo que escribió el usua
 
 Si la IA se equivoca: Puede crear funciones que no se usan, o usarlas en el momento incorrecto.
 
-🚦 Concepto 3: Condicionales (preguntas)
+## 🚦 Concepto 3: Condicionales (preguntas)
 Hacen una pregunta y actúan según la respuesta.
 
 ```avascript
@@ -111,7 +111,7 @@ En tus apps: Si el usuario escribió muy poco, mostrar error. Si ganó el juego,
 
 Si la IA se equivoca: Puede hacer la pregunta al revés (ej. if (edad < 18) cuando debería ser >=).
 
-💡 Cómo pedirle ayuda a la IA (Replit Agent)
+## 💡 Cómo pedirle ayuda a la IA (Replit Agent)
 Cuando algo no funciona, escribile cosas claras:
 
 Para errores:
@@ -127,13 +127,13 @@ Para entender qué pasa:
 
 "Agregá un console.log cada vez que se ejecute la función calcularPuntaje"
 
-🐛 Los 3 errores más comunes (y cómo arreglarlos)
+##  🐛 Los 3 errores más comunes (y cómo arreglarlos)
 Lo que ves	Qué significa	Qué hacer
 undefined is not an object	Usaste algo que no existe	Revisá que escribiste bien el nombre
 Network error	No conecta con Hugging Face	Revisá el token en los Secretos de Replit
 El botón no hace nada	La función no está conectada	Fijate que el botón tenga onClick={nombreDeLaFuncion}
 
-🎯 Lo más importante de este documento
+##  🎯 Lo más importante de este documento
 Vibe coding = describís en español, la IA escribe el código
 Variables = cajitas que guardan datos (nombre, puntaje, etc.)
 Funciones = recetas que hacen cosas cuando las llamás
@@ -143,6 +143,6 @@ Saber pedirle ayuda a la IA es tan importante como entender código
 
 Con esto ya podés hacer tu primer proyecto (AlanApp o JuegoOffline). El resto se aprende haciendo.
 
-🚀 A crear!
+##  🚀 A crear!
 
 ¿Terminaste tu primer proyecto? Pasá al CONCEPTOS_AVANZADOS.md cuando quieras entender más.
