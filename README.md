@@ -29,6 +29,7 @@ La idea es que antes de ponerse a programar, los estudiantes puedan **visualizar
 | [`JuegoOffline/`](https://github.com/xstemla/2026/tree/main/JuegoOffline) | 🎮 JuegoOffline | Juego mobile sin wifi (runner con repetición de partida y consejos IA) |
 | [`MDQTuristica/`](https://github.com/xstemla/2026/tree/main/MDQTuristica) | 🌊 MDQTurística | App para potenciar el turismo en Mar del Plata (3 perfiles + mapa + chatbot IA) |
 | [`MascotasApp/`](https://github.com/xstemla/2026/tree/main/MascotasApp) | 🐾 MascotasApp | App para mascotas perdidas en Mar del Plata (mapa + alertas + consejos IA) |
+| [`MenteApp/`](https://github.com/xstemla/2026/tree/main/MenteApp) | 💚 MenteApp | Apoyo emocional para adolescentes: modo urgente, chat IA seguro y seguimiento del ánimo |
 | [`OrientaApp/`](https://github.com/xstemla/2026/tree/main/OrientaApp) | 🎓 OrientaApp | Test vocacional con IA (recomendación de carreras + mapa de universidades) |
 | [`PrimerEmpleoApp/`](https://github.com/xstemla/2026/tree/main/PrimerEmpleoApp) | 💼 PrimerEmpleoApp | App para primer empleo de jóvenes 16-18 (CV con IA + puntos + insignias) |
 | [`SaludMayoresApp/`](https://github.com/xstemla/2026/tree/main/SaludMayoresApp) | 👴 SaludMayoresApp | App accesible para adultos mayores (medicamentos + turnos médicos + mapa) |
@@ -65,7 +66,7 @@ Todo se hace **desde el navegador**, sin instalar nada:
 
 ### Para cada proyecto:
 
-1. **Entrá a la carpeta del proyecto** que te interesa (ej. `AlanApp/`).
+1. **Entrá a la carpeta del proyecto** que te interesa (ej. `MenteApp/`).
 2. **Leé el `instructivo.md`**: entendé qué hace la app y qué necesitás.
 3. **Creá las cuentas gratuitas**: Replit, Hugging Face (y Supabase si el proyecto lo requiere).
 4. **Configurá los "Secretos"** en Replit (las API keys).
