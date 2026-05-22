@@ -117,17 +117,16 @@ Si la IA se equivoca: Puede hacer la pregunta al revés (ej. if (edad < 18) cuan
 Cuando algo no funciona, escribile cosas claras:
 
 Para errores:
-"Hay un error que dice Cannot read property 'nombre' of undefined. Arreglalo"
+> "Hay un error que dice Cannot read property 'nombre' of undefined. Arreglalo"
 
 Para funciones que no andan:
-"El botón Guardar no guarda nada. Revisá la función que maneja el clic"
+> "El botón Guardar no guarda nada. Revisá la función que maneja el clic"
 
 Para comportamiento raro:
-"Cuando aprieto Enviar, la página se recarga sola. Debería mostrar un mensaje sin recargar"
+> "Cuando aprieto Enviar, la página se recarga sola. Debería mostrar un mensaje sin recargar"
 
 Para entender qué pasa:
-
-"Agregá un console.log cada vez que se ejecute la función calcularPuntaje"
+> "Agregá un console.log cada vez que se ejecute la función calcularPuntaje"
 
 ##  🐛 Los 3 errores más comunes (y cómo arreglarlos)
 Lo que ves	Qué significa	Qué hacer
@@ -136,10 +135,10 @@ Network error	No conecta con Hugging Face	Revisá el token en los Secretos de Re
 El botón no hace nada	La función no está conectada	Fijate que el botón tenga onClick={nombreDeLaFuncion}
 
 ##  🎯 Lo más importante de este documento
-Vibe coding = describís en español, la IA escribe el código
-Variables = cajitas que guardan datos (nombre, puntaje, etc.)
-Funciones = recetas que hacen cosas cuando las llamás
-Condicionales = preguntas para decidir qué hacer
+1. Vibe coding = describís en español, la IA escribe el código
+2. Variables = cajitas que guardan datos (nombre, puntaje, etc.)
+3. Funciones = recetas que hacen cosas cuando las llamás
+4. Condicionales = preguntas para decidir qué hacer
 
 Saber pedirle ayuda a la IA es tan importante como entender código
 
