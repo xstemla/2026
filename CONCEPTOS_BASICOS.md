@@ -80,7 +80,7 @@ Si la IA se equivoca: Puede crear funciones que no se usan, o usarlas en el mome
 ## 🚦 Concepto 3: Condicionales (preguntas)
 Hacen una pregunta y actúan según la respuesta.
 
-```avascript
+```javascript
 if (edad >= 18) {
   mostrar("Podés votar")
 } else {
@@ -89,6 +89,7 @@ if (edad >= 18) {
 ```
 
 Operadores que vas a usar:
+```javascript
 == o === → igual
 != → distinto
 > → mayor que
@@ -97,6 +98,7 @@ Operadores que vas a usar:
 <= → menor o igual
 && → Y (las dos condiciones tienen que cumplirse)
 || → O (al menos una se cumple)
+```
 
 Ejemplo con dos condiciones:
 
