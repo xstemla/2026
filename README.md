@@ -31,22 +31,24 @@ Antes de arrancar, te recomendamos tener a mano estos documentos:
 
 ## 🗂️ Proyectos disponibles
 
+## 🗂️ Proyectos disponibles
+
 | Carpeta | Proyecto | Descripción |
 |---------|----------|-------------|
-| `AlanApp/` | 🧠 AlanApp | Asistente de estudio con IA que divide tareas, da recompensas y motiva al usuario |
-| `ColectivoApp/` | 🚌 ColectivoApp | App con IA que detecta cuándo subís al colectivo y avisa a tus compañeros en un mapa en vivo |
-| `DesperdicioCero/` | 🥗 DesperdicioCero | App para evitar desperdicio de comida (escáner + recetas IA + compostaje + ranking) |
-| `EntrenamientoApp/` | 💪 EntrenamientoApp | App de entrenamiento y salud con videos, progreso y IA motivadora |
-| `EstudIA/` | 📚 EstudIA | Apoyo escolar gratuito con videos y asistente IA que genera ejercicios |
-| `FaunaApp/` | 🦎 FaunaApp | App para registrar avistajes de fauna con clasificación automática por IA |
-| `JuegoOffline/` | 🎮 JuegoOffline | Juego mobile sin wifi (runner con repetición de partida y consejos IA) |
-| `MDQTuristica/` | 🌊 MDQTurística | App para potenciar el turismo en Mar del Plata (3 perfiles + mapa + chatbot IA) |
-| `mascotas-perdidas/` | 🐾 MascotasApp | App para mascotas perdidas en Mar del Plata (mapa + alertas + consejos IA) |
-| `MenteApp/` | 💚 MenteApp | Apoyo emocional para adolescentes: modo urgente, chat IA seguro y seguimiento del ánimo |
-| `OrientaApp/` | 🎓 OrientaApp | Test vocacional con IA (recomendación de carreras + mapa de universidades) |
-| `PrimerEmpleoApp/` | 💼 PrimerEmpleoApp | App para primer empleo de jóvenes 16-18 (CV con IA + puntos + insignias) |
-| `SaludMayoresApp/` | 👴 SaludMayoresApp | App accesible para adultos mayores (medicamentos + turnos médicos + mapa) |
-| `Tubular/` | 🎨 TubularApp | Animación con IA: convertí secuencias de dibujos en animaciones fluidas y conectate con actores de doblaje |
+| [`AlanApp/`](./AlanApp) | 🧠 AlanApp | Asistente de estudio con IA que divide tareas, da recompensas y motiva al usuario |
+| [`ColectivoApp/`](./ColectivoApp) | 🚌 ColectivoApp | App con IA que detecta cuándo subís al colectivo y avisa a tus compañeros en un mapa en vivo |
+| [`DesperdicioCero/`](./DesperdicioCero) | 🥗 DesperdicioCero | App para evitar desperdicio de comida (escáner + recetas IA + compostaje + ranking) |
+| [`EntrenamientoApp/`](./EntrenamientoApp) | 💪 EntrenamientoApp | App de entrenamiento y salud con videos, progreso y IA motivadora |
+| [`EstudIA/`](./EstudIA) | 📚 EstudIA | Apoyo escolar gratuito con videos y asistente IA que genera ejercicios |
+| [`FaunaApp/`](./FaunaApp) | 🦎 FaunaApp | App para registrar avistajes de fauna con clasificación automática por IA |
+| [`JuegoOffline/`](./JuegoOffline) | 🎮 JuegoOffline | Juego mobile sin wifi (runner con repetición de partida y consejos IA) |
+| [`MDQTuristica/`](./MDQTurística) | 🌊 MDQTurística | App para potenciar el turismo en Mar del Plata (3 perfiles + mapa + chatbot IA) |
+| [`mascotas-perdidas/`](./mascotas-perdidas) | 🐾 MascotasApp | App para mascotas perdidas en Mar del Plata (mapa + alertas + consejos IA) |
+| [`MenteApp/`](./MenteApp) | 💚 MenteApp | Apoyo emocional para adolescentes: modo urgente, chat IA seguro y seguimiento del ánimo |
+| [`OrientaApp/`](./OrientaApp) | 🎓 OrientaApp | Test vocacional con IA (recomendación de carreras + mapa de universidades) |
+| [`PrimerEmpleoApp/`](./PrimerEmpleoApp) | 💼 PrimerEmpleoApp | App para primer empleo de jóvenes 16-18 (CV con IA + puntos + insignias) |
+| [`SaludMayoresApp/`](./SaludMayoresApp) | 👴 SaludMayoresApp | App accesible para adultos mayores (medicamentos + turnos médicos + mapa) |
+| [`Tubular/`](./Tubular) | 🎨 TubularApp | Animación con IA: convertí secuencias de dibujos en animaciones fluidas y conectate con actores de doblaje |
 
 ---
 
