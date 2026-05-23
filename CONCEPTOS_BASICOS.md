@@ -129,10 +129,12 @@ Para entender qué pasa:
 > "Agregá un console.log cada vez que se ejecute la función calcularPuntaje"
 
 ##  🐛 Los 3 errores más comunes (y cómo arreglarlos)
-Lo que ves	Qué significa	Qué hacer
-undefined is not an object	Usaste algo que no existe	Revisá que escribiste bien el nombre
-Network error	No conecta con Hugging Face	Revisá el token en los Secretos de Replit
-El botón no hace nada	La función no está conectada	Fijate que el botón tenga onClick={nombreDeLaFuncion}
+
+| Lo que ves | Qué significa | Qué hacer |
+|--|--|--|	
+|undefined is not an object	|Usaste algo que no existe	|Revisá que escribiste bien el nombre|
+|Network error	|No conecta con Hugging Face	|Revisá el token en los Secretos de Replit|
+|El botón no hace nada	|La función no está conectada	|Fijate que el botón tenga onClick={nombreDeLaFuncion}|
 
 ##  🎯 Lo más importante de este documento
 1. Vibe coding = describís en español, la IA escribe el código
