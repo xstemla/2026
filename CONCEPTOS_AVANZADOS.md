@@ -102,9 +102,7 @@ Diferencia con el estado
 |La pantalla se actualiza sola	| ✅ Sí	 | ❌ No (hay que cargarlo manualmente) |
 |Sirve para...	| Cosas temporales (lo que pasa mientras usás la app)	 | Cosas permanentes (perfil, progreso guardado) |
 
-> Regla de oro:
-
-Si algo tiene que seguir estando después de cerrar la app → guardalo en localStorage.
+> Regla de oro: Si algo tiene que seguir estando después de cerrar la app → guardalo en localStorage.
 
 **En tus apps:** Perfil del usuario, lista de tareas, puntaje más alto, animaciones guardadas.
 
