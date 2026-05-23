@@ -6,9 +6,10 @@ Bienvenido al repositorio de proyectos del taller **"Jóvenes Emprendedores con 
 
 ## 📌 ¿Qué es esto?
 
-Este espacio contiene **guías paso a paso** para que estudiantes (de 12 a 18 años) creen aplicaciones con inteligencia artificial usando **Replit + Hugging Face**, **sin necesidad de instalar nada en sus computadoras**.
+Este espacio contiene **guías paso a paso** para que estudiantes (de 12 a 18 años) creen aplicaciones con inteligencia artificial usando **Replit + Hugging Face**, **sin necesidad de instalar nada** en sus computadoras.
 
 Cada proyecto está en su propia carpeta y contiene dos archivos:
+
 - **`readme.md`** : el prompt técnico para copiar y pegar en Replit Agent
 - **`instructivo.md`** : la guía para humanos (paso a paso, explicaciones, problemas comunes)
 
@@ -16,24 +17,36 @@ La idea es que antes de ponerse a programar, los estudiantes puedan **visualizar
 
 ---
 
+## 📚 Material de apoyo
+
+Antes de arrancar, te recomendamos tener a mano estos documentos:
+
+👉 **[DIFICULTAD.md](./DIFICULTAD.md)** - ¿Qué tan difícil es cada proyecto?
+
+👉 **[CONCEPTOS_BASICOS.md](./CONCEPTOS_BASICOS.md)** - Lo que necesitás saber desde el día 1
+
+👉 **[CONCEPTOS_AVANZADOS.md](./CONCEPTOS_AVANZADOS.md)** - Para cuando quieras saber más
+
+---
+
 ## 🗂️ Proyectos disponibles
 
 | Carpeta | Proyecto | Descripción |
 |---------|----------|-------------|
-| [`AlanApp/`](https://github.com/xstemla/2026/tree/main/AlanApp) | 🧠 AlanApp | Asistente de estudio con IA que divide tareas, da recompensas y motiva al usuario |
-| [`ColectivoApp/`](https://github.com/xstemla/2026/tree/main/ColectivoApp) | 🚌 ColectivoApp | App con IA que detecta cuándo subís al colectivo y avisa a tus compañeros en un mapa en vivo |
-| [`DesperdicioCero/`](https://github.com/xstemla/2026/tree/main/DesperdicioCero) | 🥗 DesperdicioCero | App para evitar desperdicio de comida (escáner + recetas IA + compostaje + ranking) |
-| [`EntrenamientoApp/`](https://github.com/xstemla/2026/tree/main/EntrenamientoApp) | 💪 EntrenamientoApp | App de entrenamiento y salud con videos, progreso y IA motivadora |
-| [`EstudIA/`](https://github.com/xstemla/2026/tree/main/EstudIA) | 📚 EstudIA | Apoyo escolar gratuito con videos y asistente IA que genera ejercicios |
-| [`FaunaApp/`](https://github.com/xstemla/2026/tree/main/FaunaApp) | 🦎 FaunaApp | App para registrar avistajes de fauna con clasificación automática por IA |
-| [`JuegoOffline/`](https://github.com/xstemla/2026/tree/main/JuegoOffline) | 🎮 JuegoOffline | Juego mobile sin wifi (runner con repetición de partida y consejos IA) |
-| [`MDQTuristica/`](https://github.com/xstemla/2026/tree/main/MDQTuristica) | 🌊 MDQTurística | App para potenciar el turismo en Mar del Plata (3 perfiles + mapa + chatbot IA) |
-| [`mascotas-perdidas/`](https://github.com/xstemla/2026/tree/main/mascotas-perdidas) | 🐾 MascotasApp | App para mascotas perdidas en Mar del Plata (mapa + alertas + consejos IA) |
-| [`MenteApp/`](https://github.com/xstemla/2026/tree/main/MenteApp) | 💚 MenteApp | Apoyo emocional para adolescentes: modo urgente, chat IA seguro y seguimiento del ánimo |
-| [`OrientaApp/`](https://github.com/xstemla/2026/tree/main/OrientaApp) | 🎓 OrientaApp | Test vocacional con IA (recomendación de carreras + mapa de universidades) |
-| [`PrimerEmpleoApp/`](https://github.com/xstemla/2026/tree/main/PrimerEmpleoApp) | 💼 PrimerEmpleoApp | App para primer empleo de jóvenes 16-18 (CV con IA + puntos + insignias) |
-| [`SaludMayoresApp/`](https://github.com/xstemla/2026/tree/main/SaludMayoresApp) | 👴 SaludMayoresApp | App accesible para adultos mayores (medicamentos + turnos médicos + mapa) |
-| [`Tubular/`](https://github.com/xstemla/2026/tree/main/Tubular) | 🎨 TubularApp | Animación con IA: convertí secuencias de dibujos en animaciones fluidas y conectate con actores de doblaje |
+| `AlanApp/` | 🧠 AlanApp | Asistente de estudio con IA que divide tareas, da recompensas y motiva al usuario |
+| `ColectivoApp/` | 🚌 ColectivoApp | App con IA que detecta cuándo subís al colectivo y avisa a tus compañeros en un mapa en vivo |
+| `DesperdicioCero/` | 🥗 DesperdicioCero | App para evitar desperdicio de comida (escáner + recetas IA + compostaje + ranking) |
+| `EntrenamientoApp/` | 💪 EntrenamientoApp | App de entrenamiento y salud con videos, progreso y IA motivadora |
+| `EstudIA/` | 📚 EstudIA | Apoyo escolar gratuito con videos y asistente IA que genera ejercicios |
+| `FaunaApp/` | 🦎 FaunaApp | App para registrar avistajes de fauna con clasificación automática por IA |
+| `JuegoOffline/` | 🎮 JuegoOffline | Juego mobile sin wifi (runner con repetición de partida y consejos IA) |
+| `MDQTuristica/` | 🌊 MDQTurística | App para potenciar el turismo en Mar del Plata (3 perfiles + mapa + chatbot IA) |
+| `mascotas-perdidas/` | 🐾 MascotasApp | App para mascotas perdidas en Mar del Plata (mapa + alertas + consejos IA) |
+| `MenteApp/` | 💚 MenteApp | Apoyo emocional para adolescentes: modo urgente, chat IA seguro y seguimiento del ánimo |
+| `OrientaApp/` | 🎓 OrientaApp | Test vocacional con IA (recomendación de carreras + mapa de universidades) |
+| `PrimerEmpleoApp/` | 💼 PrimerEmpleoApp | App para primer empleo de jóvenes 16-18 (CV con IA + puntos + insignias) |
+| `SaludMayoresApp/` | 👴 SaludMayoresApp | App accesible para adultos mayores (medicamentos + turnos médicos + mapa) |
+| `Tubular/` | 🎨 TubularApp | Animación con IA: convertí secuencias de dibujos en animaciones fluidas y conectate con actores de doblaje |
 
 ---
 
@@ -52,7 +65,7 @@ No hace falta saber programar. Las guías están escritas en un lenguaje simple,
 Todo se hace **desde el navegador**, sin instalar nada:
 
 | Herramienta | Link | Para qué |
-|-------------|------|----------|
+|-------------|------|-----------|
 | **Replit** | [replit.com](https://replit.com) | Escribir y ejecutar el código (con Replit Agent) |
 | **Hugging Face** | [huggingface.co](https://huggingface.co) | IA gratuita (modelo Phi-3) |
 | **Supabase** | [supabase.com](https://supabase.com) | Base de datos en la nube (solo para proyectos con mapa en vivo) |
@@ -69,13 +82,13 @@ Todo se hace **desde el navegador**, sin instalar nada:
 
 1. **Entrá a la carpeta del proyecto** que te interesa (ej. `MenteApp/`).
 2. **Leé el `instructivo.md`**: entendé qué hace la app y qué necesitás.
-3. **Creá las cuentas gratuitas**: Replit, Hugging Face (y Supabase si el proyecto lo requiere).
+3. **Creá las cuentas gratuitas** : Replit, Hugging Face (y Supabase si el proyecto lo requiere).
 4. **Configurá los "Secretos"** en Replit (las API keys).
 5. **Copiá el contenido del `readme.md`** de ese proyecto.
 6. **Pegalo en Replit Agent** y esperá a que genere la app.
-7. **Probá, ajustá, mejorá**: las guías son sugerencias. Cambiá los colores, agregá funciones, hacé la app a tu gusto.
+7. **Probá, ajustá, mejorá** : las guías son sugerencias. Cambiá los colores, agregá funciones, hacé la app a tu gusto.
 8. **Publicá en Vercel** y generá el APK con PWABuilder.
-9. **Compartí tu APK**: tus compañeros pueden instalar tu app en sus celulares.
+9. **Compartí tu APK** : tus compañeros pueden instalar tu app en sus celulares.
 
 ---
 
@@ -88,13 +101,14 @@ Antes de escribir una sola línea de código, es importante:
 - **Definir las funcionalidades** clave de tu app
 - **Imaginar el diseño** y la experiencia
 
-Estas guías siguen esa lógica: primero se explica **qué hace la app**, luego **cómo se construye**. Es un estilo de "documento vivo" que acompaña el proceso de creación, no solo el resultado final.
+Estas guías siguen esa lógica: primero se explica **qué hace la app** , luego **cómo se construye**. Es un estilo de "documento vivo" que acompaña el proceso de creación, no solo el resultado final.
 
 ---
 
 ## 🧠 ¿Por qué Hugging Face y no Google AI Studio?
 
 En este taller usamos **Hugging Face** porque:
+
 - Es **gratuito** y no tiene restricciones de edad (no requiere verificación con tarjeta)
 - Ofrece modelos potentes como `microsoft/Phi-3-mini-4k-instruct`
 - Funciona perfectamente con Replit y es fácil de configurar
