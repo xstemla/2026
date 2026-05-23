@@ -164,17 +164,19 @@ En tus apps: Mostrar una lista de mensajes, generar varios fotogramas de una ani
 Si la IA se equivoca: Puede hacer un bucle infinito (la app se traba). Si pasa, cerrá y volvé a abrir.
 
 ## 🐛 Errores comunes y cómo solucionarlos (versión completa)
-Lo que ves	Qué significa	Qué hacer
-undefined is not an object	Usaste algo que no existe	Revisá que escribiste bien el nombre
-Cannot read property 'x' of undefined	Una variable no tiene valor todavía	Fijate que esté inicializada antes de usarla
-setLikes is not a function	Usaste mal el estado	Revisá: const [likes, setLikes] = useState(0)
-Maximum call stack exceeded	Bucle infinito o componente que se renderiza sin parar	Copiale el error a la IA
-La pantalla no se actualiza al cambiar algo	Usaste variable normal en vez de estado	Cambiá let por const [..., set...] = useState(...)
-Los datos desaparecen al cerrar la app	Necesitás localStorage	Pedile a la IA: "Guardá esto en localStorage para que no se borre"
-El botón no hace nada	La función no está conectada	Revisá onClick={nombreDeFuncion} (sin paréntesis)
-Network error	No conecta con Hugging Face	Revisá el token en los Secretos de Replit
-La página se recarga sola	Un botón sin type="button" dentro de un formulario	Agregá type="button" al botón
-🔧 Debugging con console.log
+|Lo que ves	|Qué significa	|Qué hacer |
+|--|--|--|
+|undefined is not an object	|Usaste algo que no existe	|Revisá que escribiste bien el nombre|
+|Cannot read property 'x' of undefined	|Una variable no tiene valor todavía	|Fijate que esté inicializada antes de usarla|
+|setLikes is not a function	|Usaste mal el estado	|Revisá: const [likes, setLikes] = useState(0)|
+|Maximum call stack exceeded	|Bucle infinito o componente que se renderiza sin parar	|Copiale el error a la IA|
+|La pantalla no se actualiza al cambiar algo	|Usaste variable normal en vez de estado	|Cambiá let por const [..., set...] = useState(...)|
+|Los datos desaparecen al cerrar la app	|Necesitás localStorage	|Pedile a la IA: "Guardá esto en localStorage para que no se borre"|
+|El botón no hace nada	|La función no está conectada	|Revisá onClick={nombreDeFuncion} (sin paréntesis)|
+|Network error	|No conecta con Hugging Face	|Revisá el token en los Secretos de Replit|
+|La página se recarga sola	|Un botón sin type="button" dentro de un formulario	|Agregá type="button" al botón|
+
+## 🔧 Debugging con console.log
 console.log es tu mejor amiga. Te permite ver qué valores tienen las variables en cada momento.
 
 ```javascript
