@@ -5,15 +5,16 @@ Este archivo es la **guía para humanos**.
 Antes de seguir, asegurate de tener:
 - [ ] Una cuenta en **Replit** (gratis, con Google o GitHub)
 - [ ] Una cuenta en **Hugging Face** (gratis, para la IA)
+
 > 💡 Todo es gratuito y no necesita instalación en tu computadora.
->
+
  
 ---
 ## 🎯 Qué hace esta app
 Ayuda a las personas a evitar desperdiciar comida y aprovechar residuos orgánicos. La app permite:
 - Escanear productos (simulado con texto)
 - Recibir recetas con alimentos próximos a vencer
-- Ideas para compostaje y reutilización de residuos
+- Ideas para compostaje y reutilización de residuos (composteras caseras, cáscaras, etc.)
 - Foro comunitario con asistente IA
 - Ranking de "comidas salvadas" y dinero ahorrado
 
@@ -29,9 +30,13 @@ Ayuda a las personas a evitar desperdiciar comida y aprovechar residuos orgánic
 
 ✅ **No se instala nada en la computadora.**
 
+✅ **No se instala nada en la computadora.**
+
 ---
 
 ## 🚀 Paso a paso
+
+# 🚀 Paso a paso
 
 ### 1. Crear las cuentas gratuitas (5 minutos)
 **A. Hugging Face** (la IA)
@@ -92,6 +97,7 @@ A la derecha de la pantalla aparece una vista previa. Probá:
 
 > 🥑 La app ayuda a no tirar comida y ahorrar dinero.
 
+
 ---
 ## 🤖 ¿Dónde usamos IA?
 
@@ -143,7 +149,7 @@ const prompt = `
 
 ## 🎯 Frase para la defensa
 
-> _"Usando solo Replit desde el navegador, con IA gratuita de Hugging Face, construimos una app que ayuda a evitar el desperdicio de comida: identifica productos, sugiere recetas, da ideas para reutilizar residuos y tiene un foro comunitario con ranking. Todo gratis, sin necesidad de base de datos externa."_
+> "Usando solo Replit desde el navegador, con IA gratuita de Hugging Face, construimos una app que ayuda a evitar el desperdicio de comida: identifica productos, sugiere recetas, da ideas para reutilizar residuos y tiene un foro comunitario con ranking. Todo gratis, sin necesidad de base de datos externa."
 
 ----------
 
