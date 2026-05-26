@@ -92,7 +92,7 @@ Cada uno de estos eventos debe registrarse en el EventLog con timestamp:
 ---
 ## SUPABASE (esquema)
 ```sql
-CREATE TABLE viajes (
+CREATE TABLE IF NOT EXISTS viajes (
  id SERIAL PRIMARY KEY,
  nombre_usuario TEXT NOT NULL,
  lat FLOAT NOT NULL,
@@ -102,6 +102,7 @@ CREATE TABLE viajes (
  created_at TIMESTAMP DEFAULT NOW(),
  updated_at TIMESTAMP DEFAULT NOW()
 );
+
 ALTER TABLE viajes REPLICA IDENTITY FULL;
 ```
 ----------
