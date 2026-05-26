@@ -1,4 +1,4 @@
-﻿Creá una aplicación web con React 18 + TypeScript + Vite + Tailwind CSS.
+Creá una aplicación web con React 18 + TypeScript + Vite + Tailwind CSS.
 
 ## NOMBRE: DesperdicioCero
 
@@ -74,7 +74,7 @@ Ayudar a evitar el desperdicio de comida mediante IA: escanear productos (simula
 - Mostrar recetas en formato amigable (nombre + pasos cortos)
 
 ### FASE 5 - Tips para residuos orgánicos
-- Sección con ideas predefinidas (compostaje, reutilización de cáscaras)
+- Sección con ideas predefinidas (compostaje, reutilización de cáscaras, composteras caseras)
 - El usuario puede preguntar "¿qué hago con X?" y la IA responde
 
 ### FASE 6 - Comunidad / Foro con IA
@@ -129,11 +129,8 @@ Ayudar a evitar el desperdicio de comida mediante IA: escanear productos (simula
  ]
 }
 ```
-----------
-
 ## HUGGING FACE IA (detalles específicos)
-
-**Prompt para identificación de producto:**
+Prompt para identificación de producto:
 
 ```javascript
 const prompt = `
@@ -144,8 +141,8 @@ const prompt = `
  Respondé solo el JSON, nada más.
 `;
 ```
+Prompt para recetas:
 
-**Prompt para recetas:**
 ```javascript
 const prompt = `
  Ingredientes disponibles: ${ingredientes}
@@ -157,8 +154,8 @@ const prompt = `
  Consejo anti-desperdicio: [texto]
 `;
 ```
+Prompt para residuos:
 
-**Prompt para residuos:**
 ```javascript
 const prompt = `
  El usuario pregunta sobre residuos orgánicos: ${pregunta}
@@ -166,8 +163,8 @@ const prompt = `
  Sé breve, amigable y útil.
 `;
 ```
+Prompt para asistente del foro:
 
-**Prompt para asistente del foro:**
 ```javascript
 const prompt = `
  El usuario pregunta en el foro: ${pregunta}
@@ -175,51 +172,35 @@ const prompt = `
  Respondé de forma útil y alentadora.
 `;
 ```
-----------
 
 ## MANEJO DE ERRORES (OBLIGATORIO)
+Hugging Face falla o timeout
+- Mostrar mensaje amigable
+- Usar respuestas predefinidas (fallback local) para:
+    - Recetas comunes (tortilla, pan francés, ensaladas)
+    - Tips de compostaje básico
+    - Identificación de productos comunes
 
-### Hugging Face falla o timeout
+## Cámara no disponible
+- Usar entrada de texto como alternativa principal
+- Mostrar mensaje: "Podés escribir el nombre del producto"
 
--   Mostrar mensaje amigable    
--   Usar respuestas predefinidas (fallback local) para:   
-    -   Recetas comunes (tortilla, pan francés, ensaladas)        
-    -   Tips de compostaje básico       
-    -   Identificación de productos comunes
-        
-
-### Cámara no disponible
--   Usar entrada de texto como alternativa principal  
--   Mostrar mensaje: "Podés escribir el nombre del producto"
-    
-
-### LocalStorage lleno o error
-
--   Limitar a últimos 50 productos   
--   Mostrar opción de limpiar datos viejos
-    
-----------
+##LocalStorage lleno o error
+- Limitar a últimos 50 productos
+- Mostrar opción de limpiar datos viejos
 
 ## MOBILE (OBLIGATORIO)
-
--   Evitar overflow horizontal    
--   Compatible con iPhone SE y Android Chrome    
--   Botones tamaño mínimo 44x44px
--   Inputs grandes para facilitar escritura   
--   Tarjetas de recetas fáciles de leer en pantallas chicas
-    
-----------
+- Evitar overflow horizontal
+- Compatible con iPhone SE y Android Chrome
+- Botones tamaño mínimo 44x44px
+- Inputs grandes para facilitar escritura
+- Tarjetas de recetas fáciles de leer en pantallas chicas
 
 ## VARIABLES DE ENTORNO (Secrets en Replit)
-
 ```text
 VITE_HF_TOKEN = token_huggingface
-```
-----------
-
-## ESTRUCTURA DE ARCHIVOS
-
-```text
+ESTRUCTURA DE ARCHIVOS
+text
 src/
 ├── pages/
 │   ├── Home.tsx
@@ -246,25 +227,19 @@ src/
  └── index.ts
 ```
 
-----------
-
 ## DEPENDENCIAS
-
 ```text
 react, react-dom, typescript, vite, tailwindcss, wouter
 @huggingface/inference
 lucide-react
 ```
 
-----------
-
 ## CRITERIOS DE ACEPTACIÓN
-
--   Sin errores TypeScript    
--   Escaneo de productos (simulado con texto) funciona    
--   IA genera recetas según ingredientes  
--   Foro permite publicar tips y verlos en lista   
--   Ranking acumula puntos por acciones  
--   Datos persisten en localStorage entre sesiones    
--   Diseño mobile-first con tonos verdes/naturales
--   Fallback elegante si Hugging Face no responde
+- Sin errores TypeScript
+- Escaneo de productos (simulado con texto) funciona
+- IA genera recetas según ingredientes
+- Foro permite publicar tips y verlos en lista
+- Ranking acumula puntos por acciones
+- Datos persisten en localStorage entre sesiones
+- Diseño mobile-first con tonos verdes/naturales
+- Fallback elegante si Hugging Face no responde
