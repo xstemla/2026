@@ -1,4 +1,4 @@
-# ¿Por qué no funcionó el primer prompt y el último sí?
+# ¿Por qué no funcionó el prompt?
 
 ## Explicación súper básica para estudiantes
 
