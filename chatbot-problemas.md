@@ -3,7 +3,7 @@
 
 ---
 
-## 🔴 El primer prompt (no funcionó)
+## 🔴 El prompt (no funcionó)
 
 EL prompt decía algo como: *"Usá Hugging Face con el token"*
 
