@@ -1,12 +1,11 @@
-# ¿Por qué no funcionó el primer prompt y el último sí?
+# ¿Por qué no funcionó el prompt?
 
-## Explicación súper básica para estudiantes
 
 ---
 
-## 🔴 El primer prompt (no funcionó)
+## 🔴 El prompt (no funcionó)
 
-Tu primer prompt decía algo como: *"Usá Hugging Face con el token"*
+EL prompt decía algo como: *"Usá Hugging Face con el token"*
 
 ### ¿Qué pasó cuando intentaron ejecutarlo?
 
@@ -28,9 +27,9 @@ En Replit, la dirección de Hugging Face (`api-inference.huggingface.co`) está 
 
 ---
 
-## 🟢 El último prompt (sí funciona)
+## 🟢 Prompt mejorado(sí funciona)
 
-El último prompt dice: *"Usá OpenRouter con la integración de Replit"*
+prompt dice: *"Usá OpenRouter con la integración de Replit"*
 
 ### ¿Qué cambió?
 
@@ -52,14 +51,14 @@ Imaginá que querés mandar una carta a un amigo.
 
 | Situación | Qué pasó |
 |-----------|----------|
-| **Primer prompt** | Intentaste mandar la carta por correo, pero el cartero no podía salir de tu barrio (CORS). Después construiste tu propio cartero (proxy), pero la calle de tu amigo estaba cerrada (dominio bloqueado). Después intentaste mandar un mensaje de texto, pero tu teléfono no tenía saldo (token sin permiso). |
-| **Último prompt** | Usaste el **celular de Replit** (OpenRouter), que ya tiene saldo y puede mandar mensajes sin salir de la casa. |
+| **prompt inicial** | Intentaste mandar la carta por correo, pero el cartero no podía salir de tu barrio (CORS). Después construiste tu propio cartero (proxy), pero la calle de tu amigo estaba cerrada (dominio bloqueado). Después intentaste mandar un mensaje de texto, pero tu teléfono no tenía saldo (token sin permiso). |
+| **prompt mejorado** | Usar el **celular de Replit** (OpenRouter), que ya tiene saldo y puede mandar mensajes sin salir de la casa. |
 
 ---
 
 ## 📝 La frase que resume todo
 
-> *"El primer prompt no funcionó porque intentaba hablar con Hugging Face desde afuera, y Replit tenía esa puerta cerrada. El último prompt funciona porque usa OpenRouter, que es un servicio que ya está adentro de Replit y no tiene que salir."*
+> *"El prompt no funcionó porque intentaba hablar con Hugging Face desde afuera, y Replit tenía esa puerta cerrada. El último prompt funciona porque usa OpenRouter, que es un servicio que ya está adentro de Replit y no tiene que salir."*
 
 ---
 
