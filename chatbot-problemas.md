@@ -51,8 +51,8 @@ Imaginá que querés mandar una carta a un amigo.
 
 | Situación | Qué pasó |
 |-----------|----------|
-| **Primer prompt** | Intentaste mandar la carta por correo, pero el cartero no podía salir de tu barrio (CORS). Después construiste tu propio cartero (proxy), pero la calle de tu amigo estaba cerrada (dominio bloqueado). Después intentaste mandar un mensaje de texto, pero tu teléfono no tenía saldo (token sin permiso). |
-| **Último prompt** | Usaste el **celular de Replit** (OpenRouter), que ya tiene saldo y puede mandar mensajes sin salir de la casa. |
+| **prompt inicial** | Intentaste mandar la carta por correo, pero el cartero no podía salir de tu barrio (CORS). Después construiste tu propio cartero (proxy), pero la calle de tu amigo estaba cerrada (dominio bloqueado). Después intentaste mandar un mensaje de texto, pero tu teléfono no tenía saldo (token sin permiso). |
+| **prompt mejorado** | Usar el **celular de Replit** (OpenRouter), que ya tiene saldo y puede mandar mensajes sin salir de la casa. |
 
 ---
 
