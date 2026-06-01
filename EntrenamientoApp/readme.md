@@ -1,205 +1,486 @@
-﻿Creá una aplicación web con React 18 + TypeScript + Vite + Tailwind CSS.
+# 🏋️ EntrenamientoApp
 
-## NOMBRE: EntrenamientoApp
-
-
-## FUNCIONALIDAD PRINCIPAL
-
-Ayudar a jóvenes y adolescentes a aprender sobre entrenamiento y salud. Incluye categorías por nivel, videos educativos, seguimiento de progreso (gráficos y calendario), funciones sociales (ranking, compartir logros, desafíos) y un asistente IA que recomienda rutinas y responde preguntas.
-
----
-## RESTRICCIONES (OBLIGATORIO RESPETAR)
-- NO usar backend propio
-- NO usar Firebase
-- NO usar Redux, NO usar Zustand
-- NO agregar autenticación real
-- NO agregar funcionalidades fuera del MVP
-- Mantener arquitectura simple
-- Priorizar estabilidad sobre features
+Crear una aplicación web con **React 18 + TypeScript + Vite + Tailwind CSS**.
 
 ---
 
-## ARQUITECTURA (DESACOPLADO)
-- `useHuggingFace`: lógica de comunicación con Hugging Face API
-- `useProgreso`: lógica de seguimiento (peso, entrenamientos, gráficos)
-- `useSocial`: lógica de ranking, desafíos y compartir
-- `useVideos`: lógica de reproducción de videos (con/sonido)
-- Los componentes deben ser presentacionales
+# 📌 NOMBRE
+
+**EntrenamientoApp**
 
 ---
 
-## DEFINICIONES EXACTAS
-- **NIVEL PRINCIPIANTE**: ejercicios básicos, sin peso, énfasis en técnica
-- **NIVEL INTERMEDIO**: ejercicios con peso moderado, series de 8-12 repeticiones
-- **NIVEL AVANZADO**: ejercicios complejos, alta intensidad
-- **DESAFÍO SEMANAL**: objetivo medible (ej. "entrená 3 días", "hacé 100 sentadillas")
+# 🎯 FUNCIONALIDAD PRINCIPAL
+
+Ayudar a jóvenes y adolescentes a aprender sobre entrenamiento y salud.
+
+La aplicación incluye:
+
+* Categorías por nivel.
+* Videos educativos.
+* Seguimiento de progreso mediante gráficos y calendario.
+* Funciones sociales (ranking, compartir logros y desafíos).
+* Asistente IA que recomienda rutinas y responde preguntas.
 
 ---
 
-## LOGS OBLIGATORIOS (para debugging)
+# 🚫 RESTRICCIONES (OBLIGATORIO RESPETAR)
 
-- 📹 Video reproducido / pausado
-- 📊 Progreso guardado (peso, entrenamiento)
-- 🏆 Desafío completado
-- 🤖 Consultando Hugging Face para rutina...
-- 🤖 IA respondió
-- 👥 Logro compartido por WhatsApp
-- ⚠️ Error de Hugging Face
-
----
-
-## IMPLEMENTACIÓN POR FASES
-
-### FASE 1 - Setup base
-- React + Vite + TypeScript + Tailwind
-- Routing con wouter (Home, Entrenamiento, Progreso, Social, AsistenteIA)
-
-### FASE 2 - Pantalla principal y categorías
-- Tarjetas con niveles: Principiante, Intermedio, Avanzado
-- Tipos de entrenamiento: Cardio, Fuerza, Flexibilidad, Funcional
-- Sección "Para qué sirve entrenar" (beneficios físicos y mentales)
-
-### FASE 3 - Contenido educativo (videos e imágenes)
-- Grid de ejercicios con:
- - Video de YouTube embebido (ejemplo para cada ejercicio)
- - Imagen ilustrativa (placeholder o URL)
- - Texto explicativo paso a paso
-- Toggle "Sonido activado / silenciado" (muta el video si se puede)
-
-### FASE 4 - Seguimiento de progreso
-- Formulario para anotar: peso (kg), repeticiones, tiempo (min)
-- Calendario visual (días entrenados se marcan en verde)
-- Gráfico simple de progreso (línea para peso o barras para días entrenados)
-- Guardar datos en localStorage
-
-### FASE 5 - Integración con Hugging Face IA
-- SDK: @huggingface/inference
-- Modelo: microsoft/Phi-3-mini-4k-instruct
-- Variable: VITE_HF_TOKEN
-- Funciones:
- - Recomendar rutina según nivel y objetivo
- - Responder preguntas sobre técnica y prevención de lesiones
- - Generar mensajes motivadores personalizados
- 
-### FASE 6 - Funcionalidades sociales
-- Botón "Compartir logro" → abre WhatsApp con mensaje predefinido
-- Ranking de amigos (simulado con datos de ejemplo: "Ana: 5 días", "Luis: 3 días")
-- Desafíos semanales predefinidos (se marcan como completados)
-
-### FASE 7 - Asistente IA (chat simple)
-- Input para que el usuario haga preguntas
-- Ejemplos: "¿cómo hago sentadillas?", "¿cómo evito lesiones?", "motivame"
-- IA responde en formato texto amigable
-
-### FASE 8 - Dashboard personal
-- Mostrar estadísticas: días entrenados esta semana, progreso de peso, último desafío completado
-- Recomendación de rutina semanal generada por IA (según nivel y objetivo guardado)
+* NO usar backend propio.
+* NO usar Firebase.
+* NO usar Redux.
+* NO usar Zustand.
+* NO agregar autenticación real.
+* NO agregar funcionalidades fuera del MVP.
+* Mantener arquitectura simple.
+* Priorizar estabilidad sobre features.
 
 ---
 
-## LOCALSTORAGE (estructura de datos)
-```json
-{
- "usuarioId": "usuario_demo",
- "nivel": "principiante",
- "objetivo": "ganar fuerza",
- "progreso": {
- "peso": [70, 69.5, 69],
- "fechasPeso": ["2025-05-01", "2025-05-08", "2025-05-15"],
- "entrenamientos": [
- { "fecha": "2025-05-01", "tipo": "fuerza", "duracion": 30 },
- { "fecha": "2025-05-03", "tipo": "cardio", "duracion": 20 }
- ]
- },
- "desafiosCompletados": ["entrenar 3 dias", "100 sentadillas"],
- "anotaciones": ["me duele la espalda al hacer peso muerto"],
- "sonidoActivado": true
-}
-```
-----------
+# 🏗️ ARQUITECTURA (DESACOPLADO)
 
-## HUGGING FACE IA (detalles específicos)
+## Hooks
 
-**Prompt para recomendar rutina:**
+### useIA
 
-```javascript
-const prompt = `
- Nivel: ${nivel} (principiante/intermedio/avanzado)
- Objetivo: ${objetivo} (ganar fuerza/bajar de peso/mejorar resistencia)
- Días disponibles por semana: ${dias}
- Respondé EXACTAMENTE en este formato:
- Rutina: [3-4 ejercicios con repeticiones o minutos]
- Técnica: [consejo corto]
- Motivación: [frase corta]
-`;
-```
+Lógica de comunicación con OpenRouter.
 
-**Prompt para asistente de preguntas:**
+### useProgreso
 
-```javascript
-const prompt = `
- Contexto: app de entrenamiento para jóvenes.
- Pregunta del usuario: ${pregunta}
- Respondé de forma clara, breve y útil.
- Si no sabés algo, sugerí consultar a un entrenador profesional.
-`;
-```
+Lógica de seguimiento:
 
-**Prompt para motivación personalizada:**
+* Peso.
+* Entrenamientos.
+* Gráficos.
 
-```javascript
-const prompt = `
- El usuario ha entrenado ${diasEntrenados} días esta semana.
- Su mejor racha fue ${rachaMaxima} días seguidos.
- Generá un mensaje corto y motivador para alentarlo a seguir.
-`;
-```
-----------
+### useSocial
 
-## MANEJO DE ERRORES (OBLIGATORIO)
+Lógica de:
 
-### Hugging Face falla o timeout
+* Ranking.
+* Desafíos.
+* Compartir logros.
 
--   Mostrar mensaje amigable
--   Usar respuestas predefinidas (fallback local) para:   
-    -   Rutinas básicas por nivel        
-    -   Consejos de técnica comunes        
-    -   Frases motivadoras genéricas
-        
+### useVideos
 
-### Videos de YouTube no cargan
+Lógica de reproducción:
 
--   Mostrar mensaje "Video no disponible"  
--   Ofrecer ver solo la explicación por texto
-    
+* Reproducir.
+* Pausar.
+* Sonido activado/silenciado.
 
-### LocalStorage lleno o error
+## Componentes
 
--   Limitar historial a últimos 30 entrenamientos    
--   Mostrar opción de exportar/limpiar datos
-   
-----------
+Los componentes deben ser únicamente presentacionales.
 
-## MOBILE (OBLIGATORIO)
+---
 
--   Evitar overflow horizontal    
--   Compatible con iPhone SE y Android Chrome    
--   Botones tamaño mínimo 44x44px   
--   Videos responsivos (aspect-ratio 16/9)    
--   Gráficos legibles en pantallas chicas    
--   Calendario táctil (fácil de tocar días)
-    
-----------
+# 📚 DEFINICIONES EXACTAS
 
-## VARIABLES DE ENTORNO (Secrets en Replit)
+## Nivel Principiante
+
+* Ejercicios básicos.
+* Sin peso.
+* Énfasis en técnica.
+
+## Nivel Intermedio
+
+* Peso moderado.
+* Series de 8 a 12 repeticiones.
+
+## Nivel Avanzado
+
+* Ejercicios complejos.
+* Alta intensidad.
+
+## Desafío Semanal
+
+Objetivo medible.
+
+Ejemplos:
+
+* Entrenar 3 días.
+* Hacer 100 sentadillas.
+
+---
+
+# 📝 LOGS OBLIGATORIOS
 
 ```text
-VITE_HF_TOKEN = token_huggingface
+📹 Video reproducido / pausado
+📊 Progreso guardado (peso, entrenamiento)
+🏆 Desafío completado
+🤖 Consultando IA (OpenRouter) para rutina...
+🤖 IA respondió
+👥 Logro compartido por WhatsApp
+⚠️ Error de IA (OpenRouter)
 ```
 
-----------
+---
 
-## ESTRUCTURA DE ARCHIVOS
+# 🚀 IMPLEMENTACIÓN POR FASES
+
+## FASE 1 — Setup Base
+
+* React
+* Vite
+* TypeScript
+* Tailwind CSS
+* Routing con Wouter
+
+Páginas:
+
+* Home
+* Entrenamiento
+* Progreso
+* Social
+* AsistenteIA
+
+---
+
+## FASE 2 — Pantalla Principal y Categorías
+
+### Niveles
+
+* Principiante
+* Intermedio
+* Avanzado
+
+### Tipos de entrenamiento
+
+* Cardio
+* Fuerza
+* Flexibilidad
+* Funcional
+
+### Sección educativa
+
+"Para qué sirve entrenar"
+
+Beneficios:
+
+* Físicos.
+* Mentales.
+* Hábitos saludables.
+
+---
+
+## FASE 3 — Contenido Educativo
+
+Grid de ejercicios con:
+
+* Video de YouTube embebido.
+* Imagen ilustrativa.
+* Explicación paso a paso.
+* Toggle de sonido.
+
+Opciones:
+
+* Sonido activado.
+* Sonido silenciado.
+
+---
+
+## FASE 4 — Seguimiento de Progreso
+
+Formulario para registrar:
+
+* Peso (kg).
+* Repeticiones.
+* Tiempo (minutos).
+
+### Visualización
+
+* Calendario de entrenamientos.
+* Gráfico de progreso.
+
+### Persistencia
+
+Guardar en localStorage.
+
+---
+
+## FASE 5 — Integración IA con OpenRouter
+
+### Importante
+
+NO utilizar Hugging Face.
+
+Usar OpenRouter.
+
+### API
+
+```text
+https://openrouter.ai/api/v1/chat/completions
+```
+
+### Variable de entorno
+
+```env
+VITE_OPENROUTER_API_KEY=tu_api_key
+```
+
+### Modelo recomendado
+
+```text
+google/gemini-2.0-flash-exp:free
+```
+
+Alternativa:
+
+```text
+microsoft/phi-3-mini-128k-instruct
+```
+
+### Hook useIA.ts
+
+```typescript
+const response = await fetch(
+  "https://openrouter.ai/api/v1/chat/completions",
+  {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${import.meta.env.VITE_OPENROUTER_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "google/gemini-2.0-flash-exp:free",
+      messages: [
+        {
+          role: "user",
+          content: prompt,
+        },
+      ],
+    }),
+  }
+);
+```
+
+### Funciones IA
+
+* Recomendar rutinas.
+* Responder preguntas.
+* Generar motivación personalizada.
+
+---
+
+## FASE 6 — Funcionalidades Sociales
+
+### Compartir Logro
+
+Botón:
+
+```text
+Compartir por WhatsApp
+```
+
+### Ranking Simulado
+
+```text
+Ana: 5 días
+Luis: 3 días
+Pedro: 2 días
+```
+
+### Desafíos
+
+* Entrenar 3 días.
+* Hacer 100 sentadillas.
+* Caminar 5 km.
+
+---
+
+## FASE 7 — Asistente IA
+
+Chat simple.
+
+Preguntas ejemplo:
+
+```text
+¿Cómo hago sentadillas?
+¿Cómo evito lesiones?
+Motivame.
+```
+
+Respuesta:
+
+* Clara.
+* Breve.
+* Útil.
+
+Utilizando OpenRouter.
+
+---
+
+## FASE 8 — Dashboard Personal
+
+Mostrar:
+
+* Días entrenados esta semana.
+* Evolución del peso.
+* Último desafío completado.
+
+Además:
+
+* Recomendación semanal generada por IA.
+
+---
+
+# 💾 ESTRUCTURA LOCALSTORAGE
+
+```json
+{
+  "usuarioId": "usuario_demo",
+  "nivel": "principiante",
+  "objetivo": "ganar fuerza",
+  "progreso": {
+    "peso": [70, 69.5, 69],
+    "fechasPeso": [
+      "2025-05-01",
+      "2025-05-08",
+      "2025-05-15"
+    ],
+    "entrenamientos": [
+      {
+        "fecha": "2025-05-01",
+        "tipo": "fuerza",
+        "duracion": 30
+      },
+      {
+        "fecha": "2025-05-03",
+        "tipo": "cardio",
+        "duracion": 20
+      }
+    ]
+  },
+  "desafiosCompletados": [
+    "entrenar 3 dias",
+    "100 sentadillas"
+  ],
+  "anotaciones": [
+    "me duele la espalda al hacer peso muerto"
+  ],
+  "sonidoActivado": true
+}
+```
+
+---
+
+# 🤖 PROMPTS PARA OPENROUTER
+
+## Recomendar Rutina
+
+```text
+Nivel: ${nivel}
+Objetivo: ${objetivo}
+Días disponibles por semana: ${dias}
+
+Respondé EXACTAMENTE en este formato:
+
+Rutina: [3-4 ejercicios con repeticiones o minutos]
+
+Técnica: [consejo corto]
+
+Motivación: [frase corta]
+```
+
+---
+
+## Asistente de Preguntas
+
+```text
+Contexto: app de entrenamiento para jóvenes.
+
+Pregunta del usuario: ${pregunta}
+
+Respondé de forma clara, breve y útil.
+
+Si no sabés algo, sugerí consultar a un entrenador profesional.
+```
+
+---
+
+## Motivación Personalizada
+
+```text
+El usuario ha entrenado ${diasEntrenados} días esta semana.
+
+Su mejor racha fue ${rachaMaxima} días seguidos.
+
+Generá un mensaje corto y motivador para alentarlo a seguir.
+```
+
+---
+
+# ⚠️ MANEJO DE ERRORES (OBLIGATORIO)
+
+## Error de OpenRouter
+
+Mostrar:
+
+```text
+El asistente IA está muy ocupado, pero te ayudo igualmente.
+```
+
+### Fallbacks locales
+
+* Rutinas básicas.
+* Consejos de técnica.
+* Frases motivadoras.
+
+---
+
+## Error de YouTube
+
+Mostrar:
+
+```text
+Video no disponible
+```
+
+Y ofrecer:
+
+* Explicación en texto.
+
+---
+
+## Error de LocalStorage
+
+* Mantener solo los últimos 30 entrenamientos.
+* Permitir exportar datos.
+* Permitir limpiar datos.
+
+---
+
+# 📱 MOBILE (OBLIGATORIO)
+
+* Sin overflow horizontal.
+* Compatible con iPhone SE.
+* Compatible con Android Chrome.
+* Botones mínimo 44x44 px.
+* Videos responsivos.
+* Aspect ratio 16:9.
+* Gráficos legibles.
+* Calendario táctil.
+
+---
+
+# 🔐 VARIABLES DE ENTORNO
+
+```env
+VITE_OPENROUTER_API_KEY=tu_api_key_de_openrouter
+```
+
+## Obtener API Key
+
+1. Crear cuenta en OpenRouter.
+2. Ir a Keys.
+3. Generar una API Key.
+4. Guardarla en Secrets de Replit.
+
+---
+
+# 📂 ESTRUCTURA DE ARCHIVOS
 
 ```text
 src/
@@ -209,6 +490,7 @@ src/
 │   ├── Progreso.tsx
 │   ├── Social.tsx
 │   └── AsistenteIA.tsx
+│
 ├── components/
 │   ├── TarjetaNivel.tsx
 │   ├── ReproductorVideo.tsx
@@ -217,39 +499,84 @@ src/
 │   ├── TablaRanking.tsx
 │   ├── DesafiosSemanales.tsx
 │   └── ChatAsistente.tsx
+│
 ├── hooks/
-│   ├── useHuggingFace.ts
+│   ├── useIA.ts
 │   ├── useProgreso.ts
 │   ├── useSocial.ts
 │   └── useVideos.ts
+│
 ├── lib/
 │   └── localStorage.ts
+│
 ├── contexts/
 │   └── UsuarioContext.tsx
+│
 └── types/
- └── index.ts
+    └── index.ts
 ```
 
-----------
+---
 
-## DEPENDENCIAS
+# 📦 DEPENDENCIAS
+
+```json
+{
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+  "typescript": "^5.0.0",
+  "vite": "^5.0.0",
+  "tailwindcss": "^3.4.0",
+  "wouter": "^3.0.0",
+  "lucide-react": "^0.300.0",
+  "recharts": "^2.10.0"
+}
+```
+
+Nota:
+
+No utilizar:
 
 ```text
-react, react-dom, typescript, vite, tailwindcss, wouter
 @huggingface/inference
-lucide-react, recharts (para gráficos)
 ```
 
-----------
+Usar únicamente OpenRouter mediante fetch.
 
-## CRITERIOS DE ACEPTACIÓN
+---
 
--   Sin errores TypeScript    
--   Categorías y niveles funcionan    
--   Videos educativos se reproducen (al menos embebidos de YouTube)    
--   Seguimiento de progreso guarda y muestra gráfico/calendario   
--   IA recomienda rutinas según nivel  
--   Ranking y compartir por WhatsApp funcionan (simulado)    
--   Datos persisten en localStorage    
--   Diseño mobile-first con colores energéticos (naranja, verde, azul)    
--   Fallback elegante si Hugging Face no responde
+# ✅ CRITERIOS DE ACEPTACIÓN
+
+* Sin errores TypeScript.
+* Categorías y niveles funcionales.
+* Videos educativos reproducibles.
+* Seguimiento de progreso funcional.
+* Calendario y gráficos operativos.
+* IA recomienda rutinas mediante OpenRouter.
+* Ranking simulado funcional.
+* Compartir por WhatsApp funcional.
+* Persistencia en localStorage.
+* Diseño mobile-first.
+* Colores energéticos:
+
+  * Naranja.
+  * Verde.
+  * Azul.
+* Fallback elegante si OpenRouter no responde.
+
+---
+
+# 📋 RESUMEN DE CAMBIOS
+
+| Antes                            | Ahora                            |
+| -------------------------------- | -------------------------------- |
+| useHuggingFace                   | useIA                            |
+| @huggingface/inference           | Fetch + OpenRouter               |
+| VITE_HF_TOKEN                    | VITE_OPENROUTER_API_KEY          |
+| microsoft/Phi-3-mini-4k-instruct | google/gemini-2.0-flash-exp:free |
+| Consultando Hugging Face         | Consultando IA (OpenRouter)      |
+| Error de Hugging Face            | Error de IA (OpenRouter)         |
+| api-inference.huggingface.co     | openrouter.ai/api/v1             |
+
+```
+```
