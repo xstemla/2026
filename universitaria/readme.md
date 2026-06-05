@@ -121,3 +121,230 @@ LOGS OBLIGATORIOS (para debugging)
 **Configuración inicial (única vez):**
 1. En Replit: `Tools → AI Integrations → OpenRouter → Activar`
 2. Seleccionar modelo `microsoft/phi-3-mini-128k-instruct`
+
+### Código del hook `useIA.ts`:
+
+```typescript
+import { AI } from '@replit/ai'
+
+const ai = new AI()
+
+export async function consultarIA(prompt: string, contexto?: string) {
+  try {
+    const respuesta = await ai.chatCompletion({
+      model: 'microsoft/phi-3-mini-128k-instruct',
+      messages: [
+        { 
+          role: 'system', 
+          content: 'Sos un asistente para orientación vocacional universitaria. Ayudás a jóvenes de 15 a 20 años de la provincia de Buenos Aires a elegir carrera. Respondé de forma clara, con ejemplos reales y mencionando salida laboral en Argentina.' 
+        },
+        { role: 'user', content: prompt }
+      ]
+    })
+    return respuesta.message.content
+  } catch (error) {
+    console.error('⚠️ Error de IA:', error)
+    return null // Para usar fallback
+  }
+}
+
+// Función específica para detectar preguntas duplicadas
+export async function detectarDuplicado(preguntaNueva: string, preguntasExistentes: string[]) {
+  const prompt = `
+    ¿Esta nueva pregunta es esencialmente igual a alguna de las siguientes?
+    Nueva: "${preguntaNueva}"
+    Existentes: ${preguntasExistentes.join(' | ')}
+    
+    Respondé solo SI o NO.
+  `
+  const respuesta = await consultarIA(prompt)
+  return respuesta?.includes('SI') ?? false
+}
+
+// Función para recomendar foros según intereses
+export async function recomendarForos(intereses: string[], historial: string[]) {
+  const prompt = `
+    Intereses del usuario: ${intereses.join(', ')}
+    Historial de foros vistos: ${historial.join(', ')}
+    
+    Recomendá 3 foros de carreras (de: Medicina, Ingeniería, Derecho, Psicología, Computación, Administración).
+    Formato: 
+    CARRERA 1: [nombre]
+    FORO 1: [título]
+    CARRERA 2: [nombre]
+    FORO 2: [título]
+    CARRERA 3: [nombre]
+    FORO 3: [título]
+  `
+  return await consultarIA(prompt)
+}
+```
+
+## FASE 6 - Asistente IA vocacional (chat con historial) - REQUISITOS CRÍTICOS
+### ⚠️ OBLIGATORIO: El chat debe mantener historial de conversación.
+
+```typescript
+// Estado del chat
+const [mensajes, setMensajes] = useState([
+  { role: 'system', content: 'Sos Conectá, asistente de orientación universitaria para jóvenes de Buenos Aires. Ayudás a elegir carrera mostrando experiencias reales de consejeros.' }
+])
+
+// Función para enviar mensaje
+const enviarMensaje = async (texto: string) => {
+  // 1. Agregar mensaje del usuario
+  const nuevosMensajes = [...mensajes, { role: 'user', content: texto }]
+  setMensajes(nuevosMensajes)
+
+  // 2. Enviar TODO el historial a la IA
+  const respuesta = await ai.chatCompletion({
+    model: 'microsoft/phi-3-mini-128k-instruct',
+    messages: nuevosMensajes // ← Envía el historial completo
+  })
+
+  // 3. Guardar respuesta en el historial
+  setMensajes([...nuevosMensajes, { role: 'assistant', content: respuesta.message.content }])
+}
+```
+
+## FASE 7 - Validación de consejeros (simulada con IA)
+- Botón "Quiero ser consejero"
+- Subir foto de credencial (simulado, no se envía realmente)
+- IA analiza si parece válido (fallback: aprobación automática en demo)
+
+## FASE 8 - Dashboard personal
+- Estadísticas: foros seguidos, preguntas hechas, votos recibidos (si es consejero)
+- Recomendación IA personalizada de carreras según actividad
+
+LOCALSTORAGE (estructura de datos)
+```json
+{
+  "usuarioId": "estudiante_demo",
+  "rol": "estudiante",
+  "edad": 17,
+  "intereses": ["tecnologia", "salud"],
+  "forosSeguidos": ["medicina_1", "computacion_3"],
+  "preguntasRealizadas": [],
+  "votosRealizados": [],
+  "puntajeTotal": 45,
+  "ultimoForoVisto": "ingenieria/software"
+}
+
+// Consejero adicional
+{
+  "consejeroId": "consejero_demo",
+  "nombre": "Carlos Gómez",
+  "universidad": "UNLP",
+  "carrera": "Ingeniería",
+  "validado": true,
+  "puntuacion": 4.7,
+  "respuestasDadas": []
+}
+```
+Nota: No guardar el historial del chat en localStorage (solo en memoria).
+
+## PROMPTS PARA LA IA (se arman según necesidad)
+
+### Detectar pregunta duplicada:
+```text
+¿Estas dos preguntas describen la misma duda sobre una carrera universitaria?
+Pregunta 1: [texto]
+Pregunta 2: [texto]
+Respondé solo SI o NO.
+```
+
+
+### Recomendar carrera según intereses:
+```text
+- Edad: [edad]
+- Intereses: [lista]
+- Materias que le gustan: [lista]
+- Respondé: CARRERA: [nombre] JUSTIFICACION: [una oración con salida laboral en Argentina]
+```
+
+
+### Responder pregunta vocacional:
+```text
+Un joven de [edad] años pregunta: "[pregunta]"
+Respondé como consejero universitario con experiencia real. Mencioná cómo es estudiar esa carrera, dificultades y salida laboral en Buenos Aires.
+```
+
+
+---
+
+## MANEJO DE ERRORES (OBLIGATORIO)
+
+**IA falla o timeout:**
+- Mostrar mensaje amigable: "La IA está teniendo problemas, intentá de nuevo"
+- Usar fallbacks locales:
+  - Recomendaciones básicas predefinidas (carreras más comunes)
+  - Detección de duplicados por distancia de texto simple
+
+**Foros sin respuestas:**
+- Mostrar: "Todavía no hay respuestas, sé el primer consejero en ayudar"
+
+**Validación de consejero falla:**
+- Modo demo: aprobar automáticamente con mensaje "En la versión final se validaría con universidades"
+
+**localStorage lleno:**
+- Limitar a últimos 50 foros seguidos
+- Mostrar opción de reiniciar datos
+
+---
+
+## MOBILE (OBLIGATORIO)
+
+- Evitar overflow horizontal
+- Compatible con iPhone SE y Android Chrome
+- Botones tamaño mínimo 44x44px
+- Chat con scroll y input fijo abajo
+- Tarjetas de foros en grid responsivo
+
+---
+
+## VARIABLES DE ENTORNO
+
+No necesita token externo. La integración de OpenRouter se configura en Replit:
+`Tools → AI Integrations → OpenRouter → Activar`
+
+---
+
+## ESTRUCTURA DE ARCHIVOS
+```text
+src/
+├── pages/
+│ ├── Home.tsx
+│ ├── ForosPorCarrera.tsx
+│ ├── ForoDetalle.tsx
+│ ├── AsistenteIA.tsx
+│ └── Perfil.tsx
+├── components/
+│ ├── TarjetaForo.tsx
+│ ├── ListaPreguntas.tsx
+│ ├── RespuestaConsejero.tsx
+│ ├── ChatAsistente.tsx # ← Mantiene historial de mensajes
+│ └── ValidadorConsejero.tsx
+├── hooks/
+│ ├── useIA.ts # ← Usa @replit/ai, NO Hugging Face
+│ ├── useForos.ts
+│ ├── useRecomendacion.ts
+│ └── useProgresoEstudiante.ts
+├── lib/
+│ └── localStorage.ts
+├── data/
+│ └── carrerasMock.ts # Datos de ejemplo de carreras y foros
+└── types/
+└── index.ts
+```
+
+**replit.nix** - Configura la integración de IA automáticamente.
+
+---
+
+## DEPENDENCIAS
+
+```json
+{
+  "react", "react-dom", "typescript", "vite", "tailwindcss", "wouter", "lucide-react",
+  "@replit/ai"  // ← Para usar OpenRouter
+}
+```
