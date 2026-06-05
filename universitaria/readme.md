@@ -348,3 +348,41 @@ src/
   "@replit/ai"  // ← Para usar OpenRouter
 }
 ```
+
+
+## CRITERIOS DE ACEPTACIÓN
+
+- ✅ Sin errores TypeScript
+- ✅ IA funcionando con OpenRouter (NO con Hugging Face directo)
+- ✅ Asistente IA mantiene historial de conversación
+- ✅ Selección de carrera y foros funciona
+- ✅ Consejeros pueden responder preguntas
+- ✅ Votación sin doble voto funciona
+- ✅ Progreso guarda en localStorage
+- ✅ Sin errores de CORS o "Failed to fetch"
+- ✅ Fallback elegante si la IA falla
+- ✅ Mobile-first
+
+---
+
+## 📊 RESUMEN DE LO QUE APRENDIMOS
+
+| Problema detectado | Cómo lo resolvimos |
+|---|---|
+| `api-inference.huggingface.co` bloqueado | ❌ Prohibido usarlo. Usar OpenRouter. |
+| Token de HF sin permisos | ❌ No usar tokens de HF. Usar integración nativa. |
+| CORS / DNS en Replit | ✅ Solución: `@replit/ai` + OpenRouter |
+| Chat sin memoria | ✅ Requisito explícito de historial de mensajes |
+| Pérdida de tiempo debuggeando | ✅ Advertencia inicial "LEER ANTES DE EMPEZAR" |
+| Confusión sobre qué funciona | ✅ Código de ejemplo que SÍ funciona |
+
+---
+
+## 🎯 FRASE CLAVE DEL PROYECTO
+
+> **"En Replit, NO uses Hugging Face directamente. Usá OpenRouter vía @replit/ai. Es la única forma que funciona sin bloqueos ni permisos especiales. El chat tiene que mandar TODO el historial cada vez. Y la plataforma conecta jóvenes con consejeros universitarios mediante foros + IA."**
+
+---
+
+
+
